@@ -1,0 +1,45 @@
+diff --git a/config/config.php.example b/config/config.php.example
+index 0112e14..c5ecff0 100644
+--- a/config/config.php.example
++++ b/config/config.php.example
+@@ -3,8 +3,8 @@
+ return [
+     // Override the user/group under which OpenVPN will run, on CentOS/Fedora this
+     // is openvpn:openvpn, on Debian this is nobody:nogroup
+-    'vpnUser' => 'openvpn',
+-    'vpnGroup' => 'openvpn',
++    'vpnUser' => 'nobody',
++    'vpnGroup' => 'nogroup',
+ 
+     'apiUser' => 'vpn-server-node',
+     'apiPass' => 'XXX-vpn-server-node/vpn-server-api-XXX',
+diff --git a/src/OpenVpn.php b/src/OpenVpn.php
+index ec8e7c4..7ddea75 100644
+--- a/src/OpenVpn.php
++++ b/src/OpenVpn.php
+@@ -17,8 +17,8 @@ use RuntimeException;
+ 
+ class OpenVpn
+ {
+-    // CentOS
+-    const LIBEXEC_DIR = '/usr/libexec/vpn-server-node';
++    // Debian
++    const LIBEXEC_DIR = '/usr/lib/vpn-server-node';
+ 
+     const UP_PATH = '/etc/openvpn/up';
+ 
+diff --git a/tests/data/internet-0.conf b/tests/data/internet-0.conf
+index 03a36ad..c06c37c 100644
+--- a/tests/data/internet-0.conf
++++ b/tests/data/internet-0.conf
+@@ -17,8 +17,8 @@ dh none
+ ncp-ciphers AES-256-GCM
+ cipher AES-256-GCM
+ reneg-sec 36000
+-client-connect /usr/libexec/vpn-server-node/client-connect
+-client-disconnect /usr/libexec/vpn-server-node/client-disconnect
++client-connect /usr/lib/vpn-server-node/client-connect
++client-disconnect /usr/lib/vpn-server-node/client-disconnect
+ server 10.25.210.0 255.255.255.128
+ server-ipv6 fd00:4242:4242:4242::/112
+ max-clients 125

@@ -1,0 +1,31 @@
+Source: vpn-server-node
+Section: php
+Priority: optional
+Maintainer: François Kooman <fkooman@tuxed.net>
+Build-Depends: debhelper-compat (= 12),
+ pkg-php-tools,
+ phpunit,
+ phpab,
+ dh-exec,
+ php-lc-common,
+ php-psr-log,
+Standards-Version: 4.5.0
+Rules-Requires-Root: binary-targets
+Homepage: https://git.tuxed.net/LC/vpn-server-node/about/
+Vcs-Git: https://git.tuxed.net/LC/vpn-server-node
+
+Package: wireguard-vpn-server-node
+Architecture: all
+Conflicts: vpn-server-node
+Provides: vpn-server-node
+Depends: ${misc:Depends},
+ ${phpcomposer:Debian-require},
+ php-cli,
+ openvpn,
+Recommends: ${misc:Recommends}, ${phpcomposer:Debian-recommend}
+Suggests: ${phpcomposer:Debian-suggest}
+Description: ${phpcomposer:description}
+ Server node for Let's Connect! and eduVPN managing the OpenVPN 
+ server configuration and processes.
+ WireGuard version.
+ Conflicts with vpn-server-node.

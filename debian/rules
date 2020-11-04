@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --with phpcomposer
+
+override_dh_auto_build:
+	phpab --template debian/autoload.php.tpl --output src/autoload.php src
+
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	phpab --output tests/autoload.php tests
+	echo "require_once 'src/autoload.php';" >> tests/autoload.php
+	phpunit --bootstrap tests/autoload.php
+endif
+
+# we need to change the group of /etc/vpn-server-node to "nogroup" for OpenVPN
+# to be able to access the configuration file during client connect
+override_dh_fixperms:
+	dh_fixperms
+	chown -R root:nogroup      debian/wireguard-vpn-server-node/etc/vpn-server-node
+	chmod 0750                 debian/wireguard-vpn-server-node/etc/vpn-server-node
+	chmod 0755                 debian/wireguard-vpn-server-node/usr/lib/vpn-server-node/*
