@@ -1,8 +1,6 @@
-diff --git a/tests/ConnectionTest.php b/tests/ConnectionTest.php
-index a7e507c..91b25e7 100644
 --- a/tests/ConnectionTest.php
 +++ b/tests/ConnectionTest.php
-@@ -19,7 +19,7 @@ class ConnectionTest extends TestCase
+@@ -19,7 +19,7 @@
      /** @var Connection */
      private $connection;
  
@@ -11,11 +9,9 @@ index a7e507c..91b25e7 100644
      {
          $this->connection = new Connection(
              new ServerClient(
-diff --git a/tests/OpenVpnTest.php b/tests/OpenVpnTest.php
-index d7d8e58..8293036 100644
 --- a/tests/OpenVpnTest.php
 +++ b/tests/OpenVpnTest.php
-@@ -22,7 +22,7 @@ class OpenVpnTest extends TestCase
+@@ -22,7 +22,7 @@
  
      private $tmpDir;
  

@@ -1,5 +1,3 @@
-diff --git a/config/config.php.example b/config/config.php.example
-index 0112e14..c5ecff0 100644
 --- a/config/config.php.example
 +++ b/config/config.php.example
 @@ -3,8 +3,8 @@
@@ -13,11 +11,9 @@ index 0112e14..c5ecff0 100644
  
      'apiUser' => 'vpn-server-node',
      'apiPass' => 'XXX-vpn-server-node/vpn-server-api-XXX',
-diff --git a/src/OpenVpn.php b/src/OpenVpn.php
-index ec8e7c4..7ddea75 100644
 --- a/src/OpenVpn.php
 +++ b/src/OpenVpn.php
-@@ -17,8 +17,8 @@ use RuntimeException;
+@@ -18,8 +18,8 @@
  
  class OpenVpn
  {
@@ -28,11 +24,9 @@ index ec8e7c4..7ddea75 100644
  
      const UP_PATH = '/etc/openvpn/up';
  
-diff --git a/tests/data/internet-0.conf b/tests/data/internet-0.conf
-index 03a36ad..c06c37c 100644
 --- a/tests/data/internet-0.conf
 +++ b/tests/data/internet-0.conf
-@@ -17,8 +17,8 @@ dh none
+@@ -17,8 +17,8 @@
  ncp-ciphers AES-256-GCM
  cipher AES-256-GCM
  reneg-sec 36000
