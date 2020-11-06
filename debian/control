@@ -7,7 +7,7 @@ Build-Depends: debhelper-compat (= 12),
  phpunit,
  phpab,
  dh-exec,
- php-lc-common,
+ wireguard-php-lc-common,
  php-psr-log,
 Standards-Version: 4.5.0
 Rules-Requires-Root: binary-targets
