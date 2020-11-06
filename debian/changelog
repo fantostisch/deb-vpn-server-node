@@ -1,3 +1,9 @@
+vpn-server-node (0.0.1-2) sid; urgency=medium
+
+  * Depend on wireguard-php-lc-common
+
+ -- Nick Aquina <nickaquina@gmail.com>  Fri, 06 Nov 2020 11:46:08 +0100
+
 vpn-server-node (0.0.1-1) unstable; urgency=medium
 
   * Initial release
