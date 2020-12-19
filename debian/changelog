@@ -1,3 +1,9 @@
+vpn-server-node (0.0.3-1) sid; urgency=medium
+
+  * Update to vpn-server-node 2.2.6
+
+ -- Nick Aquina <nickaquina@gmail.com>  Sat, 19 Dec 2020 23:24:12 +0100
+
 vpn-server-node (0.0.1-2) sid; urgency=medium
 
   * Depend on wireguard-php-lc-common
