@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.2.7 (...)
+- `tlsProtection` is no longer an option, it is always `tls-crypt`
+
+## 2.2.6 (2020-11-27)
+- update for `ProfileConfig` refactor
+- fix IP range check
+- fix a bug where `max-clients` was one higher than available IPs in the 
+  OpenVPN client IP pool
+- also specify `keepalive` in TCP server config to work around obscure UDP/TCP
+  failover client connection bug
+  
 ## 2.2.5 (2020-10-20)
 - perform some checks on the profile configuration before writing the OpenVPN
   server configuration:
